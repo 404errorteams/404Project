@@ -4,14 +4,12 @@ _Happiness is like a kiss. You must share it to enjoy it._
 
 _Đây là các lệnh thường dùng khi thao tác với linux server (chủ yếu là RHEL, CentOS)_
 
-## Thao tác với server 
+## Thao tac vs git
 
 _Gồm các lệnh liên quan tới login vào remote server, copy file, folder_
 
 | Nội dung | Chi tiết  | Ví dụ | Chú ý |
 | -------- | -------- |--------|---|
-| Login vào server    | `ssh username@host`   | `ssh tuyennq@codelovers.vn` | `ssh` = Secure Shell|
-| Login vào server nếu có Port    | `ssh username@host -p port`   | `ssh tuyennq@codelovers.vn -p2222` | `ssh` = Secure Shell, 2222 là Port của server|
 | Xem nội dung folder   | `ls`    |`ls`  | xem dưới chân mình là ai|
 | Xem mình đang ở đâu   | `pwd`     |`pwd`   | xem mình đang ở đâu trong server|
 | Copy file    | `cp file_nguon file_dich`     |`cp README.txt README_copy.txt`    | |
@@ -19,8 +17,6 @@ _Gồm các lệnh liên quan tới login vào remote server, copy file, folder_
 | Backup file/folder    | `cp  file{,.20140101}`     |`cp   KISSME.txt{,.20140101}`    | file `KISSME.txt.20140101` sẽ được tạo ra cùng thư mục với KISSME.txt|
 | Đổi tên file/folder    | `mv file_nguon file_dich`  |`mv README.txt KISSME.txt` |KISSME.txt là tên file mới|
 | Xoá file/folder     | `rm ten_file`  | `rm README.txt` |Trước khi xoá cần cân nhắc backup. Với folder, thêm tham số `-r`: `rm -r folder`.  |
-| Copy file sang 1 remote server khác    | `scp file user_remote@remotehost:/tmp` |`scp KISSME.txt jerry@tenkana.x10.mx:/tmp` | `/tmp` là tên thư mục bên remote server. Dấu `:` để ngăn cách  |
-| Download file từ 1 remote server khác    | `scp user_remote@remotehost:/tmp/file .` |`scp jerry@tenkana.x10.mx:/tmp/KISSME.txt .` | Download KISSME.txt ở thư mục /tmp trên remote server. Dấu `.` ám chỉ đưa về ngay thư mục hiện tại của local  |
 | Xem dung lượng file/folder| `du -sh`|`du -sh filename` hoặc `du -sh *`|Xem dung lượng đĩa là `df -h`|
 | Nén file/folder | `zip -r ten_file_zip ten_folder_can_zip` | `zip -r hellozip hello` | Lệnh có thể dùng nhiều CPU, tránh dùng khi nhiều user| 
 | Tạo link mềm (soft link) | `ln -s folder_nguon folder_dich` |  `ln -s /tmp/hello /tmp/byebye ` | folder nguồn và đích nên là đường dẫn tuyệt đối. /tmp/byebye là folder sẽ được tạo mới |
